@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+twine = "*"
+docutils = "==0.15" # for pipenv issue https://github.com/pypa/pipenv/issues/3865
+
+[packages]
+requests = "*"
+click = "*"
+
+[requires]
+python_version = "3.7"
