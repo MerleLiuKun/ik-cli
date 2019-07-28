@@ -8,6 +8,7 @@ twine = "*"
 docutils = "==0.15" # for pipenv issue https://github.com/pypa/pipenv/issues/3865
 pytest = "*"
 flake8 = "*"
+tox = "*"
 
 [packages]
 requests = "*"
