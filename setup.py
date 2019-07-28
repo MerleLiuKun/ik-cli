@@ -22,7 +22,7 @@ VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'requests'
+    'requests', 'click'
 ]
 
 # What packages are optional?
@@ -48,7 +48,7 @@ except FileNotFoundError:
 # Load the package's __version__.py module as a dictionary.
 about = {}
 try:
-    project_slug = 'app'
+    project_slug = 'ik_cli'
     with open(os.path.join(here, project_slug, '__version__.py')) as f:
         exec(f.read(), about)
 except FileNotFoundError:
@@ -103,13 +103,13 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
+    packages=['ik_cli', 'ik_cli.commands'],
     # If your package is a single module, use this instead of 'packages':
     # py_modules=['mypackage'],
 
-    # entry_points={
-    #     'console_scripts': ['mycli=mymodule:cli'],
-    # },
+    entry_points={
+        'console_scripts': ['ik_cli=ik_cli.cli:cli'],
+    },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
     include_package_data=True,

@@ -105,8 +105,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# IDE
+.idea/
 
-# Commitizen
+
+# commitizen init cz-conventional-changelog --save --save-exact
 package.json
 package-lock.json
 node_modules/
