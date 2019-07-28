@@ -23,14 +23,14 @@ class Context:
 
 
 pass_context = click.make_pass_decorator(Context, ensure=True)
-cmd_folder = Path(__file__).cwd() / 'commands'
+cmd_folder = Path(__file__).parent / 'commands'
 
 
 class ComplexCLI(click.MultiCommand):
 
     def list_commands(self, ctx):
         rv = []
-        for path in list(cmd_folder.glob('cmd*.py')):
+        for path in list(cmd_folder.glob('cmd_*.py')):
             rv.append(path.name[4:-3])
         rv.sort()
         return rv
