@@ -6,6 +6,14 @@ Ik-cli
 
 This application provides some common command line tools for me.
 
+## Install
+
+You can use pip to install this tool.
+
+```shell script
+pip install ik-cli
+```
+
 ## Usage
 
 You can use main command to show all subcommands.
