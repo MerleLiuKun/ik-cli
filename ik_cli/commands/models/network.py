@@ -51,3 +51,21 @@ class IpInfo:
 
     def as_json(self):
         return json.dumps(self.as_dict(), sort_keys=True)
+
+
+if __name__ == '__main__':
+    d = {
+        "asn": 15169,
+        "continent_code": "NA",
+        "country": "United States",
+        "country_code": "US",
+        "ip": "8.8.8.8",
+        "latitude": 37.751,
+        "longitude": -97.822,
+        "offset": -21600,
+        "organization": "Google LLC",
+        "timezone": "America/Chicago"
+    }
+
+    ip_info = IpInfo.build_info(d)
+    print(ip_info.as_json())

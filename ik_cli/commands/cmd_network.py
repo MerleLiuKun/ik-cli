@@ -3,11 +3,11 @@ import requests
 from requests.exceptions import Timeout
 
 from . import constant
-from .models.network import IpInfo
+from .models import IpInfo
 from ik_cli.cli import pass_context
 
 
-@click.command('get_ip', short_help='get ip info')
+@click.command('network', short_help='get ip info')
 @click.argument('ip', nargs=1)
 @click.option('-m', '--mode', type=str, default='net')
 @pass_context
