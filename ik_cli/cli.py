@@ -3,6 +3,8 @@ from pathlib import Path
 
 import click
 
+CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
+
 
 class Context:
     def __init__(self):
@@ -43,7 +45,7 @@ class ComplexCLI(click.MultiCommand):
         return mod.cli
 
 
-@click.command(cls=ComplexCLI)
+@click.command(cls=ComplexCLI, context_settings=CONTEXT_SETTINGS)
 @click.option('-v', '--verbose', is_flag=True, help='Enable verbose mode.')
 @pass_context
 def cli(ctx, verbose):

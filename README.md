@@ -19,17 +19,16 @@ pip install ik-cli
 You can use main command to show all subcommands.
 
 ```shell script
-ik_cli --help
+ik_cli -h
 # the echo are:
 Usage: ik_cli [OPTIONS] COMMAND [ARGS]...
 
 Options:
   -v, --verbose  Enable verbose mode.
-  --help         Show this message and exit.
+  -h, --help     Show this message and exit.
 
 Commands:
   ip  get ip info
-
 ```
 
 Now you can use `network` subcommand to get point ip info from `ip.sb`.
@@ -38,13 +37,13 @@ Now you can use `network` subcommand to get point ip info from `ip.sb`.
 ik_cli ip 8.8.8.8
 
 # the echo is:
-IP: 8.8.8.8
-ASN: 15169
-CONTINENT_CODE: NA
-COUNTRY: United States
-COUNTRY_CODE: US
-LATITUDE: 37.751
-LONGITUDE: -97.822
-ORGANIZATION: Google LLC
-TIMEZONE: America/Chicago
+IP:              8.8.8.8
+ASN:             15169
+CONTINENT_CODE:  NA
+COUNTRY:         United States
+COUNTRY_CODE:    US
+LATITUDE:        37.751
+LONGITUDE:       -97.822
+ORGANIZATION:    Google LLC
+TIMEZONE:        America/Chicago
 ```

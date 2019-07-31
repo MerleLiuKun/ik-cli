@@ -12,3 +12,8 @@ install:
   - pip install pipenv
   - pipenv install --dev
 script: tox
+
+# ignore tags build
+branches:
+  except:
+    - /^v?\d+\.\d+(\.\d+)?(-\S*)?$/

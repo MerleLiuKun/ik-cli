@@ -9,7 +9,7 @@ from ik_cli.cli import pass_context
 
 @click.command('ip', short_help='get ip info')
 @click.argument('ip', nargs=1)
-@click.option('-m', '--mode', type=str, default='net')
+@click.option('-m', '--mode', type=str, default='net', help='Now only support `net`')
 @pass_context
 def cli(ctx, ip, mode):
     if not ip:
