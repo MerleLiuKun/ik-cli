@@ -28,14 +28,14 @@ Options:
   --help         Show this message and exit.
 
 Commands:
-  network  get ip info
+  ip  get ip info
 
 ```
 
 Now you can use `network` subcommand to get point ip info from `ip.sb`.
 
 ```shell script
-ik_cli network 8.8.8.8
+ik_cli ip 8.8.8.8
 
 # the echo is:
 IP: 8.8.8.8

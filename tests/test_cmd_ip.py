@@ -4,7 +4,7 @@
 
 from click.testing import CliRunner
 
-from ik_cli.commands.cmd_network import cli
+from ik_cli.commands.cmd_ip import cli
 
 
 def test_ip_info():
