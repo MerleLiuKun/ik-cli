@@ -31,7 +31,7 @@ Commands:
   ip  get ip info
 ```
 
-Now you can use `network` subcommand to get point ip info from `ip.sb`.
+Now you can use `ip` subcommand to get point ip info from `ip.sb`.
 
 ```shell script
 ik_cli ip 8.8.8.8
@@ -46,4 +46,14 @@ LATITUDE:        37.751
 LONGITUDE:       -97.822
 ORGANIZATION:    Google LLC
 TIMEZONE:        America/Chicago
+```
+
+If you want get your host ip, you can do as follows:
+
+```shell script
+ik_cli ip -m host
+
+# echo
+Your IP:  192.168.0.2
+Method:   UDP
 ```

@@ -12,3 +12,11 @@ def test_ip_info():
     result = runner.invoke(cli, ['8.8.8.8'])
     assert result.exit_code == 0
     assert '8.8.8.8' in result.output
+
+
+def test_host_ip():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["-m", "host"])
+    assert result.exit_code == 0
+    assert 'UDP' in result.output
+
