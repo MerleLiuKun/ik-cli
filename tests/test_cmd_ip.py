@@ -19,4 +19,3 @@ def test_host_ip():
     result = runner.invoke(cli, ["-m", "host"])
     assert result.exit_code == 0
     assert 'UDP' in result.output
-
