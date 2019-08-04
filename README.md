@@ -29,7 +29,10 @@ Options:
 
 Commands:
   ip  get ip info
+  time  timestamp convert
 ```
+
+#### ip info 
 
 Now you can use `ip` subcommand to get point ip info from `ip.sb`.
 
@@ -56,4 +59,23 @@ ik_cli ip -m host
 # echo
 Your IP:  192.168.0.2
 Method:   UDP
+```
+
+#### time convert
+
+Now you can change string time (like: `2019-8-1` or `2019-8-2 12.09.11`) to timestamp.
+Or change timestamp (like `1565007913`) to string time. 
+
+Notice: the timezone depend on your machine's timezone.
+
+```shell script
+ik_cli time '2019-08-05 13:14:11' 
+# echo 
+Timestamp:  1564982051
+Time:       2019-08-05 13:14:11
+
+ik_cli time 1564982100 
+# echo
+Timestamp:  1564982100
+Time:       2019-08-05 13:15:00
 ```
