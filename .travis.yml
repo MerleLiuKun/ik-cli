@@ -16,3 +16,7 @@ script: tox
 branches:
   except:
     - /^v?\d+\.\d+(\.\d+)?(-\S*)?$/
+
+before_script:
+  - export TZ=Asia/Shanghai
+  - date
