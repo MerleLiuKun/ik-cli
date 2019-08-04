@@ -2,7 +2,6 @@ language: python
 cache:
   directories:
     - $HOME/.cache/pip
-env: TOXENV=flake8
 matrix:
   include:
     - python: 3.6
