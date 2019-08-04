@@ -1,5 +1,5 @@
 """
-    test for network commands.
+    test for ip commands.
 """
 
 from click.testing import CliRunner
