@@ -58,8 +58,9 @@ def cli(ctx, timestamp, microsecond):
     else:
         res_time = str_to_datetime(ctx, timestamp)
         if res_time is not None:
-            res_timestamp = int(res_time.timestamp())
             if microsecond:
-                res_timestamp = res_timestamp * 1000
+                res_timestamp = int(round(res_time.timestamp() * 1000))
+            else:
+                res_timestamp = int(res_time.timestamp())
             ctx.log(f"Timestamp:  {res_timestamp}")
             ctx.log(f"Time:       {timestamp}")
