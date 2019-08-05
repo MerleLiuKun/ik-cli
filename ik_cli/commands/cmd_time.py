@@ -7,8 +7,9 @@ from ik_cli.cli import pass_context
 
 def datetime_to_str(ctx, timestamp):
     try:
-        format_str = '%Y-%m-%d %H:%M:%S'
-        res = timestamp.strftime(format_str)
+        # format_str = '%Y-%m-%d %H:%M:%S'
+        print(timestamp)
+        res = timestamp.isoformat(sep=' ', timespec='microseconds')
         return res
     except Exception as e:
         ctx.v_log(f"Input timestamp {timestamp} can not convert to str. errors: {e}")
@@ -37,13 +38,21 @@ def str_to_datetime(ctx, timestamp):
 def cli(ctx, timestamp, microsecond):
     if not timestamp:
         timestamp = datetime.datetime.now()
+    o_timestamp = timestamp
     # check timestamp type: time_str or timestamp
     is_timestamp_to_time = True
     try:
         timestamp = int(timestamp)  # try
+        microseconds = 0
         if microsecond:
-            timestamp = timestamp // 1000
+            microseconds = timestamp % 1000000
+            timestamp = timestamp // 1000000
+            print(timestamp)
         res_time = datetime.datetime.fromtimestamp(timestamp)
+        if microseconds:
+            res_time = res_time.replace(microsecond=microseconds)
+            print(res_time)
+            print(res_time.microsecond)
     except (TypeError, ValueError) as e:
         if 'out of range' in str(e):
             ctx.log(f"Input timestamp {timestamp} too large.")
@@ -53,14 +62,14 @@ def cli(ctx, timestamp, microsecond):
 
     if is_timestamp_to_time:
         res_time = datetime_to_str(ctx, res_time)
-        ctx.log(f"Timestamp:  {timestamp}")
+        ctx.log(f"Timestamp:  {o_timestamp}")
         ctx.log(f"Time:       {res_time}")
     else:
         res_time = str_to_datetime(ctx, timestamp)
         if res_time is not None:
             if microsecond:
-                res_timestamp = int(round(res_time.timestamp() * 1000))
+                res_timestamp = int(round(res_time.timestamp() * 1000000))
             else:
                 res_timestamp = int(res_time.timestamp())
             ctx.log(f"Timestamp:  {res_timestamp}")
-            ctx.log(f"Time:       {timestamp}")
+            ctx.log(f"Time:       {o_timestamp}")

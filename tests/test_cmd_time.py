@@ -14,7 +14,7 @@ def test_time_str_to_timestamp():
     assert '2019-08-04' in result.output
 
 
-def test_host_ip():
+def test_timestamp_to_time_str():
     runner = CliRunner()
     result = runner.invoke(cli, ["2019-08-05 12:25:13"])
     assert result.exit_code == 0
